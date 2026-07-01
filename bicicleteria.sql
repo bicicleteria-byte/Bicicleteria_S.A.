@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 03-06-2026 a las 16:05:24
+-- Tiempo de generación: 01-07-2026 a las 04:01:21
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -66,13 +66,6 @@ CREATE TABLE `categoria` (
   `descripcion` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Volcado de datos para la tabla `categoria`
---
-
-INSERT INTO `categoria` (`id_categoria`, `nombre`, `descripcion`) VALUES
-(1, 'bmx', 'bmx good estado');
-
 -- --------------------------------------------------------
 
 --
@@ -96,7 +89,7 @@ INSERT INTO `cliente` (`id_cliente`, `nombre`, `telefono`, `correo`, `direccion`
 (1, 'Juan', 2147483647, 'juan@gmail.com', 'calle 22 h 44', '1234'),
 (2, 'Juan', 2147483647, 'juan@gmail.com', 'calle 22 h 44', '1234'),
 (3, 'cristian', 2147483647, 'cris@gmail.com', 'calle 55 g 66', '1234'),
-(4, 'Juan Camilo', 2147483647, 'Camiloobando420@gmail.com', 'Carrera73 G SUR #88 33', '111');
+(4, 'cristiano', 2147483647, 'cristiano@gmail.com', 'calle 33', '1234');
 
 -- --------------------------------------------------------
 
@@ -163,7 +156,9 @@ CREATE TABLE `empleado` (
 
 INSERT INTO `empleado` (`id_empleado`, `nombre`, `telefono`, `cargo`, `fecha_ingreso`, `correo`, `contrasena`) VALUES
 (1, 'Johan', 2147483647, 'Mecanico', '2026-05-30 22:23:38', 'sebasmur87@gmail.com', '1234'),
-(2, 'Juan Camilo Novoa Obando', 45454545, 'presindente', NULL, 'camilojuan555@gmail.com\r\n', '444');
+(2, 'Juan', 312212241, 'Mecanico', '2026-06-30 20:49:46', 'juan@gmail.com', '1234'),
+(3, 'Anyi', 321548214, 'Mecanico', '2026-06-30 20:49:46', 'anyi@gmail.com', '1234'),
+(4, 'christian', 321548762, 'Mecanico', '2026-06-30 20:52:20', 'christian@gmail.com', '1234');
 
 -- --------------------------------------------------------
 
@@ -188,7 +183,7 @@ CREATE TABLE `producto` (
 --
 
 INSERT INTO `producto` (`id_producto`, `nombre`, `descripcion`, `precio`, `imagen`, `stock`, `est_disponibilidad`, `id_categoria`, `id_proveedor`) VALUES
-(1, 'Bicicleta ', 'Biciclete MTB morada', 850000.00, NULL, 10, 'Disponible', NULL, NULL);
+(1, 'Bicicleta MTB', 'Color: Azul Tipo: Montaña Marca: Explorer ', 1200000.00, NULL, 4, 'Disponible', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -223,7 +218,10 @@ CREATE TABLE `registro_horas` (
 --
 
 INSERT INTO `registro_horas` (`id_registro`, `fecha`, `horas_trabajadas`, `id_empleado`) VALUES
-(1, '2026-06-03 07:40:16', 8, 2);
+(1, '2026-06-30 20:54:49', 8, 1),
+(2, '2026-06-30 20:54:49', 5, 3),
+(3, '2026-06-30 20:56:20', 5, 2),
+(4, '2026-06-30 20:56:20', 2, 4);
 
 -- --------------------------------------------------------
 
@@ -368,7 +366,7 @@ ALTER TABLE `cargo`
 -- AUTO_INCREMENT de la tabla `categoria`
 --
 ALTER TABLE `categoria`
-  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `cliente`
@@ -398,7 +396,7 @@ ALTER TABLE `detalle_venta`
 -- AUTO_INCREMENT de la tabla `empleado`
 --
 ALTER TABLE `empleado`
-  MODIFY `id_empleado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_empleado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `producto`
@@ -416,7 +414,7 @@ ALTER TABLE `proveedor`
 -- AUTO_INCREMENT de la tabla `registro_horas`
 --
 ALTER TABLE `registro_horas`
-  MODIFY `id_registro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_registro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `servicio`
